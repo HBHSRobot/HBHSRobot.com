@@ -4,110 +4,63 @@
 @import 'libs/skel';
 
 /*
-	Hyperspace by HTML5 UP
+	Photon by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Type */
-
-	h1 {
-		&.major {
-			&:after {
-				background: _palette(accent3);
-			}
-		}
-	}
-
-/* Wrapper */
-
-	.wrapper {
-		&.fullscreen {
-			min-height: 0;
-			padding-bottom: 6em;
-			padding-top: 6em;
-
-			body.is-ie & {
-				height: auto;
-			}
-		}
-	}
-
-/* Spotlights */
-
-	.spotlights {
-		> section {
-			padding-left: 20em;
-			position: relative;
-
-			> .image {
-				height: 100%;
-				left: 0;
-				position: absolute;
-				top: 0;
-				width: 20em;
-			}
-
-			> .content {
-				width: 100%;
-			}
-		}
-	}
-
-/* Features */
-
-	.features {
-		&:after {
-			clear: both;
-			content: '';
-			display: block;
-		}
-
-		section {
-			float: left;
-		}
-	}
-
-/* Split */
-
-	.split {
-		&:after {
-			clear: both;
-			content: '';
-			display: block;
-		}
-
-		> * {
-			float: left;
-		}
-	}
-
-/* Sidebar */
-
-	#sidebar {
-		nav {
-			a {
-				&:after {
-					background-color: _palette(accent3);
-				}
-			}
-		}
-	}
-
 /* Header */
 
 	#header {
-		&:after {
-			clear: both;
+		$from: _palette(accent3-alt);
+		$to: _palette(accent6-alt);
+
+		background-image: none;
+		filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#{$from}", endColorStr="#{$to}", GradientType=1);
+		position: relative;
+
+		&:before {
+			background-image:		url('images/overlay2.png'),		url('images/overlay3.svg');
+			background-position:	top left,							center center;
+			background-size:		auto,								cover;
 			content: '';
-			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
 		}
 
-		> .title {
-			float: left;
+		> * {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+/* Footer */
+
+	#footer {
+		$from: _palette(accent6-alt);
+		$to: _palette(accent3-alt);
+
+		background-image: none;
+		filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#{$from}", endColorStr="#{$to}", GradientType=1);
+		position: relative;
+
+		&:before {
+			background-image:		url('images/overlay2.png'),		url('images/overlay4.svg');
+			background-position:	top left,							center center;
+			background-size:		auto,								cover;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
 		}
 
-		> nav {
-			float: right;
+		> * {
+			position: relative;
+			z-index: 1;
 		}
 	}
